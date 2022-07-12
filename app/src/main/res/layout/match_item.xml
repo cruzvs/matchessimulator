@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_default"    >
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_home"
+            android:layout_width="@dimen/team_img"
+            android:layout_height="@dimen/team_img"
+            android:layout_marginStart="@dimen/margin_default"
+            android:layout_marginTop="@dimen/margin_default"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/txt_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintEnd_toEndOf="@id/img_home"
+            app:layout_constraintStart_toStartOf="@id/img_home"
+            app:layout_constraintTop_toBottomOf="@id/img_home"
+            tools:text="vitor"
+
+            />
+
+        <TextView
+            android:id="@+id/txt_Nhome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintBottom_toBottomOf="@id/img_home"
+            app:layout_constraintEnd_toStartOf="@id/txt_X"
+            app:layout_constraintStart_toEndOf="@id/img_home"
+            app:layout_constraintTop_toTopOf="@id/img_home"
+            tools:text="89"
+
+            />
+
+        <TextView
+            android:id="@+id/txt_X"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintBottom_toBottomOf="@id/img_home"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/img_home"
+            tools:text="@string/txt_X"
+
+            />
+
+        <ImageView
+            android:id="@+id/img_AwayTeam"
+            android:layout_width="@dimen/team_img"
+            android:layout_height="@dimen/team_img"
+            android:layout_marginTop="@dimen/margin_default"
+            android:layout_marginEnd="@dimen/margin_default"
+            android:src="@color/cardview_dark_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars[2]" />
+
+        <TextView
+            android:id="@+id/txt_AwayTeam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintEnd_toEndOf="@id/img_AwayTeam"
+            app:layout_constraintStart_toStartOf="@id/img_AwayTeam"
+            app:layout_constraintTop_toBottomOf="@id/img_AwayTeam"
+            tools:text="vitor"
+
+            />
+
+        <TextView
+            android:id="@+id/txt_ScoreAway"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintBottom_toBottomOf="@id/img_AwayTeam"
+            app:layout_constraintEnd_toStartOf="@id/img_AwayTeam"
+            app:layout_constraintStart_toEndOf="@id/txt_X"
+            app:layout_constraintTop_toTopOf="@id/img_AwayTeam"
+            tools:text="89" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
