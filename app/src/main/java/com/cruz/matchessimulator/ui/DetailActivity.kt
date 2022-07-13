@@ -1,4 +1,4 @@
-package com.cruz.matchessimulator
+package com.cruz.matchessimulator.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
