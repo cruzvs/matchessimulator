@@ -2,11 +2,9 @@ package com.cruz.matchessimulator.domain
 
 import com.google.gson.annotations.SerializedName
 
-data class Team (
+data class Place (
     @SerializedName("nome")
-    val name: String,
-    @SerializedName("forca")
-    val stars:Int,
+    var name: String,
     @SerializedName("imagem")
-    val image: String
+    var image: String
 )

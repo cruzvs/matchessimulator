@@ -3,4 +3,5 @@
     <string name="txt_btnfloating">Botão de simulação de partidas.</string>
     <string name="txt_X">X</string>
     <string name="txt_versus">X</string>
+    <string name="error_api">Unexpected error.</string>
 </resources>
