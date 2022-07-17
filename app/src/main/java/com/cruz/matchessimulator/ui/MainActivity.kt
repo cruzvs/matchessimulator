@@ -3,9 +3,6 @@ package com.cruz.matchessimulator.ui
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.os.Bundle
-import android.view.View
-import android.view.ViewPropertyAnimator
-import android.view.animation.Animation
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cruz.matchessimulator.R
@@ -14,7 +11,10 @@ import com.cruz.matchessimulator.databinding.ActivityMainBinding
 import com.cruz.matchessimulator.domain.Match
 import com.cruz.matchessimulator.ui.adapter.MatchesAdapter
 import com.google.android.material.snackbar.Snackbar
-import retrofit2.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import kotlin.random.Random
 
@@ -54,14 +54,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupFloatingActionButton() {
-        binding.btnFloating.setOnClickListener{view->
-           view.animate().rotationBy(360F).setDuration(1)
-               .setListener(object : AnimatorListenerAdapter(){
-                   val random = Random
-                   override fun onAnimationEnd(animation:Animator?){
-
-                   }
-               })
+        binding.btnFloating.setOnClickListener {
+            it.animate().rotationBy(180f).setDuration(500)
+                .setListener(object: AnimatorListenerAdapter(){
+                    override fun onAnimationEnd(animation: Animator?) {
+                        val random = Random
+                        for ( i in 0 until matchesAdapter.itemCount){
+                            val homeTeam = matchesAdapter.matches[i].homeTeam
+                            val awayTeam = matchesAdapter.matches[i].awayTeam
+                            homeTeam.score = random.nextInt(homeTeam.stars )
+                            awayTeam.score = random.nextInt(awayTeam.stars )
+                            //Avisa o Adapter que teve mudança na tela.
+                            matchesAdapter.notifyItemChanged(i)
+                        }
+                    }
+                })
         }
     }
     private fun setupMatchesRefresh() {
