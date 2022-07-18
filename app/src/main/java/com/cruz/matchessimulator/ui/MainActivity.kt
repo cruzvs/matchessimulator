@@ -11,6 +11,7 @@ import com.cruz.matchessimulator.databinding.ActivityMainBinding
 import com.cruz.matchessimulator.domain.Match
 import com.cruz.matchessimulator.ui.adapter.MatchesAdapter
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.FirebaseApp
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var matchesApi: MatchesAPI
     private var matchesAdapter = MatchesAdapter(emptyList())
+    private lateinit var firebase: FirebaseApp
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,6 +52,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupMatchesList() {
         binding.rwScreen.setHasFixedSize(true)
         binding.rwScreen.layoutManager = LinearLayoutManager(this)
+        binding.rwScreen.adapter = matchesAdapter
         findMatchesFromAPI()
     }
 
@@ -79,7 +82,7 @@ class MainActivity : AppCompatActivity() {
         Snackbar.make(binding.btnFloating, R.string.error_api, Snackbar.LENGTH_LONG).show()
     }
     private fun findMatchesFromAPI(){
-        binding.swipeScreen.setRefreshing(true)
+        binding.swipeScreen.isRefreshing = true
         matchesApi.matches?.enqueue(object : Callback<List<Match?>?> {
             override fun onResponse(call: Call<List<Match?>?>, response: Response<List<Match?>?>) {
                 if(response.isSuccessful){
@@ -89,7 +92,7 @@ class MainActivity : AppCompatActivity() {
                 }else{
                     showErrorMessage()
                 }
-                binding.swipeScreen.setRefreshing(false)
+                binding.swipeScreen.isRefreshing = false
             }
             override fun onFailure(call: Call<List<Match?>?>, t: Throwable) {
                 showErrorMessage()

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "50296696864",
+    "project_id": "simulator-dio-6e7a2",
+    "storage_bucket": "simulator-dio-6e7a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50296696864:android:ff8e5a8362a3094348cc45",
+        "android_client_info": {
+          "package_name": "com.cruz.matchessimulator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "50296696864-kt7k4opc5jrbf7856gluivbur94is94b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCn6veaPOOw-eoKMWe3f8n5lzVR8VDkpGM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "50296696864-kt7k4opc5jrbf7856gluivbur94is94b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
